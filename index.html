@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKE CONCEPT | Interior Architecture & Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. CORE VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-dark: #1A1A1A;
+            --primary-gold: #C5A059;
+            --bg-off-white: #F9F8F4;
+            --bg-grey: #EDECE8;
+            --text-body: #4A4A4A;
+            --white: #FFFFFF;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            background-color: var(--bg-off-white);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-heading);
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        /* =========================================
+           2. UTILITY CLASSES
+           ========================================= */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--primary-gold);
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--primary-gold);
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            color: var(--primary-gold);
+        }
+
+        .section-subtitle {
+            display: block;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        /* =========================================
+           3. HEADER & NAV
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(249, 248, 244, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 20px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-dark);
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-dark);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================================
+           5. ABOUT US (THE NAKANO VISION)
+           ========================================= */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text {
+            padding-right: 20px;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 2px;
+            box-shadow: 20px 20px 0px var(--bg-grey);
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            background-color: var(--bg-grey);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 40px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           7. BLOCK 4: PHOTO & PHILOSOPHY (Advantages)
+           ========================================= */
+        .philosophy {
+            padding: 0;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .philosophy-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .philosophy-img {
+            flex: 1;
+            min-width: 400px;
+            background: url('https://images.unsplash.com/photo-1600566752355-35792bedcfe1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;
+            min-height: 600px;
+        }
+
+        .philosophy-content {
+            flex: 1;
+            min-width: 400px;
+            padding: 100px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .philosophy-content h2 {
+            color: var(--white);
+        }
+
+        .adv-list {
+            margin-top: 30px;
+        }
+
+        .adv-item {
+            margin-bottom: 30px;
+            border-left: 1px solid var(--primary-gold);
+            padding-left: 20px;
+        }
+
+        .adv-item h4 {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .adv-item p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* =========================================
+           8. BLOCK 5: PROCESS (Photo + Steps)
+           ========================================= */
+        .process {
+            background-color: var(--white);
+        }
+
+        .process-layout {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Visual Break using Image */
+        .visual-break {
+            width: 100%;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') fixed center/cover;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .visual-break h2 {
+            color: white;
+            background: rgba(0,0,0,0.5);
+            padding: 20px 40px;
+            backdrop-filter: blur(5px);
+        }
+
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .step-num {
+            font-size: 4rem;
+            font-family: var(--font-heading);
+            color: rgba(197, 160, 89, 0.2); /* Gold transparent */
+            line-height: 0.8;
+            font-weight: 700;
+        }
+
+        .step-details h4 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        /* =========================================
+           9. CONTACT FORM & INFO
+           ========================================= */
+        .contact-section {
+            background-color: var(--bg-off-white);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            background-color: var(--white);
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .info-block {
+            margin-bottom: 40px;
+        }
+
+        .info-block h5 {
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .info-block p, .info-block a {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-family: var(--font-heading);
+        }
+
+        .contact-form {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-body);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-bottom-color: var(--primary-gold);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        footer {
+            background-color: var(--primary-dark);
+            color: #777;
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .company-name {
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .philosophy-wrapper { flex-direction: column; }
+            .philosophy-img { min-height: 300px; }
+            .about-image { order: -1; margin-bottom: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-wrapper { flex-direction: column; gap: 20px; }
+            .section-title { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">IKE <span>CONCEPT</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">The Studio</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#process">Method</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Where Brazilian Soul Meets<br>Architectural Precision</h1>
+            <p>Ike Concept Interior Design transforms spaces in São Paulo into breathing ecosystems of style, function, and timeless elegance. Led by Ana Cristina Nakano.</p>
+            <a href="#contact" class="btn-gold">Start Your Project</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-subtitle">Who We Are</span>
+                    <h2 class="section-title">Curating Spatial Harmony</h2>
+                    <p>Founded by Ana Cristina Nakano, IKE CONCEPT INTERIOR DESIGN LTDA operates at the intersection of specialized technical design and artistic intuition. Based in the vibrant heart of São Paulo, we believe that an interior is not merely a backdrop for life, but an active participant in your well-being.</p>
+                    <p>Our studio moves beyond standard decoration, diving deep into the architectural bones of a property to unlock its full potential. We balance the raw, urban energy of Brazil with a "Zen-like" approach to spatial organization—inspired by the name "Ike," evoking creation and arrangement.</p>
+                    <p>With years of experience in the specialized design services sector, our team handles complex renovations and delicate styling with equal precision. We craft environments that feel authentically yours, yet surprisingly new.</p>
+                    <p>Whether for a high-end residence or a dynamic corporate headquarters, our mission remains the same: to create spaces that breathe.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Interior Design Sketch and Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding services">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">What We Do</span>
+                <h2 class="section-title">Tailored Design Services</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">&#9724;</span> <h3>Residential Sanctuaries</h3>
+                    <p>We transform houses and apartments into personal retreats that reflect the lifestyle of their inhabitants. Our approach involves a rigorous analysis of lighting, flow, and acoustics to ensure comfort. From the initial layout changes to the final selection of linens, we curate every square meter.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">&#9679;</span> <h3>Corporate Identity Spaces</h3>
+                    <p>Your office is the physical embodiment of your brand's culture and values. We design commercial interiors that optimize workflow efficiency while impressing clients and retaining talent. We merge ergonomics with bold aesthetics to create productive, inspiring environments in São Paulo.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">&#9650;</span> <h3>Technical Project Management</h3>
+                    <p>Great design requires flawless execution, which is why we offer end-to-end technical oversight. We produce detailed architectural drawings, manage contractor relationships, and oversee procurement. We ensure that the vision approved on paper is exactly what is built on site.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="philosophy">
+        <div class="philosophy-wrapper">
+            <div class="philosophy-img"></div> <div class="philosophy-content">
+                <span class="section-subtitle">Why Choose Us</span>
+                <h2 class="section-title">The Ike Signature</h2>
+                
+                <div class="adv-list">
+                    <div class="adv-item">
+                        <h4>Cultural Fusion</h4>
+                        <p>We seamlessly blend modern international trends with the warmth and texture of Brazilian design, creating spaces that feel worldly yet local.</p>
+                    </div>
+                    
+                    <div class="adv-item">
+                        <h4>Sustainability & ESG Focus</h4>
+                        <p>As a modern firm, we prioritize materials and processes that respect the environment, aiming for longevity rather than fast-fashion trends.</p>
+                    </div>
+                    
+                    <div class="adv-item">
+                        <h4>Principal-Led Attention</h4>
+                        <p>Ana Cristina Nakano oversees projects personally. You are not just hiring a firm; you are partnering with a dedicated principal designer who cares about the details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="visual-break">
+            <h2>From Concept to Reality</h2>
+        </div>
+
+        <div class="container section-padding">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="section-subtitle">Our Process</span>
+                <h2 class="section-title">How We Work</h2>
+            </div>
+
+            <div class="steps-container">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <div class="step-details">
+                        <h4>Immersion & Briefing</h4>
+                        <p>We begin by listening. We analyze your needs, the property's constraints, and your aesthetic desires. This phase culminates in a detailed project brief and mood board presentation.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <div class="step-details">
+                        <h4>Design & Development</h4>
+                        <p>This is where the magic happens. We create 3D renderings, technical floor plans, and curate material samples. We refine the design until it perfectly matches the vision.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <div class="step-details">
+                        <h4>Execution & Handover</h4>
+                        <p>We coordinate the construction, installation of millwork, and final styling. We handle the stress of logistics so you can simply walk in and enjoy your new space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding contact-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Initiate the Dialogue</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-block">
+                        <h5>Location</h5>
+                        <p>SAO PAULO, SAO PAULO<br>Brazil</p>
+                    </div>
+                    <div class="info-block">
+                        <h5>Electronic Mail</h5>
+                        <p><a href="mailto:info@ikeconceptinterior.info">info@ikeconceptinterior.info</a></p>
+                    </div>
+                    <div class="info-block">
+                        <h5>Principal</h5>
+                        <p>Ana Cristina Nakano</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" class="form-control" placeholder="e.g. John Doe" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" placeholder="e.g. john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Project Type</label>
+                            <input type="text" class="form-control" placeholder="e.g. Apartment Renovation, Office Layout">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea class="form-control" placeholder="Tell us briefly about your goals and timeline..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-gold" style="margin-top: 20px;">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="company-name">IKE CONCEPT INTERIOR DESIGN LTDA</div>
+            <p>Professional, Scientific, and Technical Services</p>
+            <p>&copy; 2024 All Rights Reserved. São Paulo, Brazil.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
